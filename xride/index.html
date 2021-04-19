@@ -1,0 +1,113 @@
+<html>
+
+<head>
+    <title>X-RideAddmin</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+                     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script>
+
+    <!--Realtime Database dependency-->
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+
+
+    <script>
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyBxVSUO08nrFKTf2XW-v0wM9lUYABjipFg",
+            authDomain: "x-rideadmin-e4f57.firebaseapp.com",
+            projectId: "x-rideadmin-e4f57",
+            storageBucket: "x-rideadmin-e4f57.appspot.com",
+            messagingSenderId: "777043236390",
+            appId: "1:777043236390:web:0f7d900d711bfaab6ab8e7",
+            measurementId: "G-1J80V0752C"
+        };
+        firebase.initializeApp(firebaseConfig);
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <!--This main div contains the entire view-->
+        <header>
+            <!--This contains the top part which has the All riders placed-->
+            <h3>All Riders</h3>
+        </header>
+
+        <div class="table-wrapper">
+            <!--This div contains the table of riders-->
+            <table class="table-riders" id="dt-rider">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Phone</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+            </table>
+            <button class="btn btn-add">Add Rider</button>
+        </div>
+
+
+        <!--All New Riders Modal or Form-->
+        <div class="add-modal modal-wrapper">
+            <div class="modal">
+                <div class="modal-header">
+                    <h3>Add New Rider</h3>
+                </div>
+                <div class="modal-body">
+                    <form class="form" autocomplete="off">
+                        <!--autocomplete off means no suggestions when a textbox is focused-->
+                        <input type="text" id="fullName" placeholder="Full Name">
+                        <input type="number" id="phone" placeholder="Phone">
+                        <input type="email" id="email" placeholder="Email">
+                        <input type="text" id="address" placeholder="Address">
+                        <button class="btn btn-modal">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--End of New RIders Modal div-->
+
+
+
+        <!--Edit New Riders Modal or Form-->
+        <div class="edit-modal modal-wrapper">
+            <div class="modal">
+                <div class="modal-header">
+                    <h3>Update Rider</h3>
+                </div>
+                <div class="modal-body">
+                    <form class="form" autocomplete="off">
+                        <!--autocomplete off means no suggestions when a textbox is focused-->
+                        <input type="text" id="fullName" placeholder="Full Name">
+                        <input type="number" id="phone" placeholder="Phone">
+                        <input type="email" id="email" placeholder="Email">
+                        <input type="text" id="address" placeholder="Address">
+                        <button class="btn btn-modal">Update</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--End of Update RIders Modal div-->
+
+    </div>
+    <!--This is the end of the main div-->
+
+
+
+    <script src="index.js"></script>
+</body>
+
+</html>
